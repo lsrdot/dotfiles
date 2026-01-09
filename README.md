@@ -2,7 +2,7 @@
 
 
 # Hyprland (hyprwm):
-https://github.com/user-attachments/assets/68bda920-ffe3-47a0-a0e8-6ed36b63717b
+https://github.com/user-attachments/assets/0e19e618-a916-4f7c-b163-8637e1bfa629
 
 
 # Waybar:
