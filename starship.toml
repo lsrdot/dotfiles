@@ -1,0 +1,16 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = true
+
+
+[character] # The name of the module we are configuring is 'character'
+success_symbol = '[ _ ](bold green)' #   /  / _ / '➜'
+error_symbol = "[  ](bold red)"      #  /  /  
+
+
+[package]
+disabled = false
+
+[directory]
+home_symbol = "~"
+disabled = false

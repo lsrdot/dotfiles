@@ -1,0 +1,18 @@
+# This file contains fish universal variable definitions.
+# VERSION: 3.0
+SETUVAR --export ANDROID_HOME:/home/dot/Android/Sdk
+SETUVAR --export EDITOR:code\x20\x2d\x2dwait
+SETUVAR LS_COLORS:di\x3d1\x3b37\x3a\x2a\x2etxt\x3d32\x3a\x2a\x2epdf\x3d1\x3b33\x3a\x2a\x2ejpg\x3d35\x3b1\x3a\x2a\x2epng\x3d35\x3b1\x3a\x2a\x2emp4\x3d33\x3a\x2a\x2emp3\x3d1\x3b36\x3a\x2a\x2ezip\x3d1\x3b31\x3a\x2a\x2egz\x3d1\x3b31\x3a\x2a\x2ehtml\x3d34\x3b4\x3a\x2a\x2ecss\x3d34\x3b4\x3a\x2a\x2ejs\x3d1\x3b34\x3a\x2a\x2epy\x3d1\x3b32\x3a\x2a\x2ers\x3d1\x3b31\x3a\x2a\x2ego\x3d1\x3b37\x3a\x2a\x2esh\x3d1\x3b33\x3aln\x3d36\x3aor\x3d31\x3b1\x3aex\x3d1\x3b32\x3aow\x3d34\x3b1\x3atw\x3d30\x3b42\x3a\x2a\x2econf\x3d33\x3a\x2a\x2etoml\x3d33\x3a\x2a\x2ejson\x3d33\x3a\x2a\x2exml\x3d33\x3a\x2a\x2emd\x3d1\x3b37\x3a\x2a\x2edockerfile\x3d1\x3b34
+SETUVAR --export --path PATH:/home/dot/Android/Sdk/platform\x2dtools\x1e/home/dot/Android/Sdk/emulator\x1e/home/dot/Android/Sdk/cmdline\x2dtools/latest/bin\x1e/home/dot/Android/Sdk/platform\x2dtools\x1e/home/dot/Android/Sdk/emulator\x1e/home/dot/Android/Sdk/cmdline\x2dtools/latest/bin\x1e/opt/jdk\x2d25\x2e0\x2e1/bin\x1e/home/dot/\x2espicetify\x1e/home/dot/\x2ecargo/bin\x1e/usr/local/sbin\x1e/usr/local/bin\x1e/usr/bin\x1e/usr/bin/site_perl\x1e/usr/bin/vendor_perl\x1e/usr/bin/core_perl\x1e/home/dot/\x2elocal/share/JetBrains/Toolbox/scripts\x1e/home/dot/Android/Sdk/emulator\x1e/home/dot/Android/Sdk/platform\x2dtools\x1e/home/dot/Android/Sdk/tools\x1e/home/dot/Android/Sdk/tools/bin\x1e/home/dot/\x2elocal/share/JetBrains/Toolbox/scripts\x1e/home/dot/Android/Sdk/emulator\x1e/home/dot/Android/Sdk/platform\x2dtools\x1e/home/dot/Android/Sdk/tools\x1e/home/dot/Android/Sdk/tools/bin\x1e/home/dot/\x2espicetify\x1e/home/dot/\x2elocal/share/JetBrains/Toolbox/scripts\x1e/home/dot/Android/Sdk/emulator\x1e/home/dot/Android/Sdk/platform\x2dtools\x1e/home/dot/Android/Sdk/tools\x1e/home/dot/Android/Sdk/tools/bin\x1e/home/dot/Android/Sdk/cmdline\x2dtools/latest/bin\x1e/home/dot/Android/Sdk/emulator\x1e/home/dot/Android/Sdk/platform\x2dtools\x1e/home/dot/Android/Sdk/cmdline\x2dtools/latest/bin
+SETUVAR --export QT_QPA_PLATFORMTHEME:qt5ct
+SETUVAR --export VISUAL:code\x20\x2d\x2dwait
+SETUVAR __fish_initialized:4300
+SETUVAR fish_color_autosuggestion:555
+SETUVAR fish_color_completion:normal
+SETUVAR fish_color_match:normal
+SETUVAR fish_color_selection:normal
+SETUVAR fish_color_valid_path:
+SETUVAR fish_pager_color_completion:normal
+SETUVAR fish_pager_color_description:normal
+SETUVAR fish_pager_color_prefix:normal
+SETUVAR fish_user_paths:/opt/jdk\x2d25\x2e0\x2e1/bin\x1e/home/dot/\x2espicetify\x1e/home/dot/\x2ecargo/bin

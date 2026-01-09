@@ -1,0 +1,103 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 24,
+  "margin-top": 3,
+  "margin-left": 0,
+  "margin-right": 0,
+  "margin-bottom": 0,
+  "exclusive": true,
+  "modules-left": ["hyprland/workspaces", "hyprland/window"],
+  "modules-center": ["clock"],
+  "modules-right": [ 
+     "mpris", "pulseaudio", "network", "cpu", "memory", "battery"
+    ],
+
+  
+ "clock": {
+    "format": "{:%H:%M}",
+    "format-alt": "{:%A, %B %d, %Y}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>"
+  },
+
+  "mpris": {
+    "format": "{player_icon} {title}",
+    "format-paused": "{title}",
+  "format-stopped": "No Media", 
+    "player-icons": {
+        "default": "",
+        "spotify": ""
+    },
+    "max-length": 25
+  },
+
+  "hyprland/workspaces": {
+    "format": " {windows} ",
+    "window-rewrite-default": "",
+    "window-rewrite": {
+      "class<google-chrome>": "",
+      "code": "",
+      "kitty": "",
+      "xwaylandvideobridge": "",
+      "org.gnome.Nautilus":"󰉋",
+      "mpv":"",
+      "spotify":""
+    }
+  },
+
+  "hyprland/window": {
+    "format": "{title}",
+    "separate-outputs": true,
+    "max-length": 30,
+    "rewrite": {
+        "^$": "󰣇" 
+    }
+},
+
+
+ "tray": {
+    "icon-size": 16,
+    "spacing": 10
+  },
+
+  "cpu": {
+    "format": "   {usage}%",
+    "tooltip": true,
+    "on-click": "missioncenter"
+  },
+
+  "memory": {
+    "format": "    {}%",
+    "on-click": "resources"
+  },
+
+ "battery": {
+  "states": {
+    "good": 100,
+    "warning": 60,
+    "critical": 35
+  },
+  "format": "{icon}  {capacity}%",
+  "format-charging": "󰂄  {capacity}%",
+  "format-plugged": "󰚥  {capacity}%",
+  "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+  "on-click": "gnome-power-statistics"
+},
+
+  "network": {
+    "format-wifi": " ",
+    "format-ethernet": "󰈀",
+    "format-disconnected": "󰖪",
+    "tooltip-format": "{ifname}: {ipaddr}\n{essid}",
+    "on-click":"nm-connection-editor"
+  },
+
+  "pulseaudio": {
+    "format": "{icon}  {volume}%",
+    "format-muted": "󰖁  Muted",
+    "format-icons": {
+      "default": ["󰕿", "󰖀", "󰕾"]
+    },
+    "on-click": "pavucontrol"
+  }
+}
