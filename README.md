@@ -1,7 +1,8 @@
 # dotfiles
 
+
 # Hyprland (hyprwm):
-https://github.com/user-attachments/assets/d840be80-8e11-4fa5-b64e-9d9f14713d45
+https://github.com/user-attachments/assets/68bda920-ffe3-47a0-a0e8-6ed36b63717b
 
 
 # Waybar:
