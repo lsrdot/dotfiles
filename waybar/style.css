@@ -14,16 +14,16 @@ window#waybar {
 .modules-left,
 .modules-center,
 .modules-right {
-  background-color: rgba(22, 22, 23, 0.70); 
-  border: 1px solid rgba(181, 213, 255, .7); 
-  /* border: 1px solid rgba(255, 255, 255, 0.3); */
+  background-color: rgba(22, 22, 23, 1.0); 
+  /* border: 1px solid rgba(181, 213, 255, .7);  */
+  border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 15px;
   margin: 3px 6px;
   padding: 3px; 
 }
 
 #workspaces {
-  background: rgba(47, 47, 47, 0.95); 
+  background: rgba(47, 47, 47, 1.0); 
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 10px;
   padding: 0 8px;
@@ -40,7 +40,7 @@ window#waybar {
 }
 
 #clock {
-  background-color: rgba(47, 47, 47, 0.95); 
+  background-color: rgba(47, 47, 47, 1.0); 
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 10px;
   padding: 0 15px; 
@@ -53,7 +53,7 @@ window#waybar {
 }
 
 #mpris > box > carousel > widget {
-  background-color: rgba(47, 47, 47, 0.95); 
+  background-color: rgba(47, 47, 47, 1.0); 
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 10px;
   padding: 0 10px;
