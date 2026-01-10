@@ -1,5 +1,3 @@
-# dotfiles
-
 # v2.*: actual config:
 these dotfiles were inspired by the mac os x 10.6 (snow leopard) ux. this is a productivity-focused dev environment i use on a d2d basis.
 
