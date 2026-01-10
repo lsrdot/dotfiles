@@ -1,4 +1,4 @@
-# v2.*: actual config:
+# actual config:
 inspired by mac os x 10.6 (snow leopard). this is a productivity-focused dev environment i use on a d2d basis.
 
 
