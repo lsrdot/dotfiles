@@ -26,8 +26,11 @@
 !waybar/
 !waybar/**
 
+!wallpaper/**
+
 !starship.toml
 !.tmux.conf
 !README.md
 !LICENSE
 !.zshrc
+

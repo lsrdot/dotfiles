@@ -84,4 +84,4 @@ QListView#resultsList {
 
 QListView#resultsList::item{
   height: 48px;
-} 
+}
