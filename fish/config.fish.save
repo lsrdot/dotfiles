@@ -1,0 +1,44 @@
+if status is-interactive
+    set -g fish_greeting ""
+    set -Ua fish_user_paths ~/.cargo/bin
+    starship init fish | source
+
+# Subtle CRT phosphor green hierarchy
+set -gx LS_COLORS \
+"rs=0:"\
+"di=1;38;2;134;255;85:"\
+"fi=38;2;111;230;63:"\
+"ln=38;2;111;230;63:"\
+"ex=38;2;124;255;74:"\
+"pi=38;2;111;230;63:"\
+"so=38;2;111;230;63:"\
+"bd=38;2;111;230;63:"\
+"cd=38;2;111;230;63:"\
+"mi=38;2;111;230;63:"
+
+
+
+    alias vi="nvim"
+    alias s="yay -Ss" #search packages
+    alias i="yay -Sy"
+    alias u="yay -Syu"
+    alias sysup="yay -Syu --noconfirm && reboot"
+    alias remove="yay -Rns"
+    alias py="python"
+    alias map="telnet mapscii.me | sed -n 's/\x1b\[[0-9;]*m//gp'"
+
+
+    set -x EDITOR "code --wait"
+    set -x VISUAL "code --wait"
+
+    set -gx PATH $PATH ~/.local/share/JetBrains/Toolbox/scripts
+    set -gx PNPM_HOME "/home/dot/.local/share/pnpm"
+    set -gx QT_QPA_PLATFORMTHEME qt5ct
+
+    fish_add_path /home/dot/.spicetify
+    fish_add_path ~/.spicetify
+
+    if not string match -q -- $PNPM_HOME $PATH
+        set -gx PATH "$PNPM_HOME" $PATH
+    end
+end

@@ -4,41 +4,14 @@ add_newline = true
 
 
 [character] # The name of the module we are configuring is 'character'
-success_symbol = '[ _ ](bold #FFFFFF)' #   /  / _ / '➜'
-error_symbol = "[  ](bold #e50000)"    #  /  /  
+success_symbol = '[ _ ](bold #86FF55)' #   /  / _ / '➜'
+error_symbol = "[   ](bold #86FF55)"    #  /  /   
 
 
 [package]
 disabled = false
+style = "bold #FFFFFF"
 
 [directory]
-home_symbol = ""
-disabled = true
-
-[[battery.display]]
-threshold = 30
-style = 'bold red'
-
-[git_branch]
-style = "bold #FFFFFF"
-symbol = " "
-
-[git_status]
-style = "#E5E5E5"
-conflicted = "="
-ahead = "⇡"
-diverged = "⇕"
-behind = "⇣"
-untracked = "?"
-stashed = "$"
-modified = "!"
-staged = "+"
-renamed = "»"
-deleted = "✘"
-
-[git_commit]
-style = "#CCCCCC"
-
-[git_state]
-style = "#DDDDDD"
-
+home_symbol = "~"
+disabled = false
