@@ -1,0 +1,90 @@
+[
+    {
+        "fallback": false,
+        "iconPath": ":amazon",
+        "id": "08ef14dc",
+        "name": "Amazon",
+        "trigger": "ama",
+        "url": "http://www.amazon.com/s/?field-keywords=%s"
+    },
+    {
+        "fallback": true,
+        "iconPath": ":gpt",
+        "id": "71cb63b0",
+        "name": "Chat GPT",
+        "trigger": "gpt",
+        "url": "https://chat.openai.com/?q=%s"
+    },
+    {
+        "fallback": true,
+        "iconPath": ":duckduckgo",
+        "id": "05bdd25d",
+        "name": "DuckDuckGo",
+        "trigger": "dd",
+        "url": "https://duckduckgo.com/?q=%s"
+    },
+    {
+        "fallback": false,
+        "iconPath": ":ebay",
+        "id": "0e72b242",
+        "name": "Ebay",
+        "trigger": "eb",
+        "url": "http://www.ebay.com/sch/i.html?_nkw=%s"
+    },
+    {
+        "fallback": false,
+        "iconPath": ":github",
+        "id": "d3dbe803",
+        "name": "GitHub",
+        "trigger": "gh",
+        "url": "https://github.com/search?utf8=✓&q=%s"
+    },
+    {
+        "fallback": true,
+        "iconPath": ":google",
+        "id": "a78d331b",
+        "name": "Google",
+        "trigger": "gg",
+        "url": "https://www.google.com/search?q=%s"
+    },
+    {
+        "fallback": true,
+        "iconPath": ":maps",
+        "id": "6085cd1e",
+        "name": "Google Maps",
+        "trigger": "maps",
+        "url": "https://www.google.com/maps/search/%s/"
+    },
+    {
+        "fallback": false,
+        "iconPath": ":scholar",
+        "id": "d32a83da",
+        "name": "Google Scholar",
+        "trigger": "scholar",
+        "url": "https://scholar.google.com/scholar?q=%s"
+    },
+    {
+        "fallback": false,
+        "iconPath": ":google_translate",
+        "id": "5736f99f",
+        "name": "Google Translate",
+        "trigger": "gt",
+        "url": "https://translate.google.com/?text=%s"
+    },
+    {
+        "fallback": true,
+        "iconPath": ":wolfram",
+        "id": "81d53539",
+        "name": "Wolfram Alpha",
+        "trigger": "wa",
+        "url": "https://www.wolframalpha.com/input/?i=%s"
+    },
+    {
+        "fallback": true,
+        "iconPath": ":youtube",
+        "id": "5e4080b2",
+        "name": "YouTube",
+        "trigger": "yt",
+        "url": "https://www.youtube.com/results?search_query=%s"
+    }
+]

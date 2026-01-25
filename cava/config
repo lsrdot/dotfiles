@@ -235,15 +235,14 @@
 gradient = 1
 gradient_count = 8
 
-
-gradient_color_1 = '#86FF55'
-gradient_color_2 = '#8DFF61'
-gradient_color_3 = '#95FF6D'
-gradient_color_4 = '#9CFF79'
-gradient_color_5 = '#A3FF85'
-gradient_color_6 = '#AAFF91'
-gradient_color_7 = '#B1FF9D'
-gradient_color_8 = '#B8FFA9'
+gradient_color_1 = '#33FF66'
+gradient_color_2 = '#37FF6A'
+gradient_color_3 = '#3BFF6E'
+gradient_color_4 = '#3FFF72'
+gradient_color_5 = '#43FF76'
+gradient_color_6 = '#47FF7A'
+gradient_color_7 = '#4BFF7E'
+gradient_color_8 = '#4FFF82'
 
 
 [smoothing]

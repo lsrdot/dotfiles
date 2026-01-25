@@ -17,9 +17,6 @@
 !kitty/
 !kitty/**
 
-!nvim/
-!nvim/**
-
 !tmux/
 !tmux/**
 
