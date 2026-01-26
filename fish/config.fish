@@ -1,19 +1,19 @@
 if status --is-interactive
-    # Configurações iniciais
+
     set -Ua fish_user_paths ~/.cargo/bin
     starship init fish | source
 
-    # Enable vi mode
-    #fish_vi_key_bindings
-
-# Cursor shapes (Vim-like)
-    set -U fish_cursor_default block      # normal mode
-    set -U fish_cursor_insert block        # insert mode
-    set -U fish_cursor_visual block       # visual mode
-    set -U fish_cursor_replace_one block  # replace mode
+    
+    
 
 
-    # # Auto-start TMUX
+    set -U fish_cursor_default block      
+    set -U fish_cursor_insert block        
+    set -U fish_cursor_visual block       
+    set -U fish_cursor_replace_one block  
+
+
+    #TMUX auto-start
     if not set -q TMUX; and set -q HYPRLAND_INSTANCE_SIGNATURE
         set -l session_name "main" 
 
@@ -27,30 +27,22 @@ if status --is-interactive
 
     set -gx LS_COLORS "rs=0:di=1;38;2;51;255;102:fi=0;38;2;46;230;92:ln=38;2;51;255;102:ex=1;38;2;51;255;102:pi=38;2;51;255;102:so=38;2;51;255;102:bd=38;2;51;255;102:cd=38;2;51;255;102:mi=38;2;51;255;102"
 
-    # Notificação sonora em caso de erro
+    # retro error term flash
     function post_command_flash --on-event fish_postexec
         if test $status -ne 0
             printf \a
         end
     end
 
-    # Aliases
     alias vi="nvim"
-    alias s="yay -Ss"
-    alias i="yay -Sy"
-    alias u="yay -Syu"
-    alias sysup="yay -Syu --noconfirm && reboot"
-    alias remove="yay -Rns"
-    alias py="python"
     alias map="telnet mapscii.me | sed -n 's/\x1b\[[0-9;]*m//gp'"
     alias wifi="sudo iw dev wlan0 scan"
     alias weather="curl wttr.in/Belo+Horizonte"
     alias ping="gping"
     alias fake="genact"
     alias scorp="/home/dot/.scripts/scorp.fish"
-    #alias ls="ls -lahs"
 
-    # Variáveis de ambiente
+    # env vars
     set -x EDITOR "code --wait"
     set -x VISUAL "code --wait"
     set -gx PATH $PATH ~/.local/share/JetBrains/Toolbox/scripts
@@ -103,7 +95,6 @@ if status --is-interactive
     end
     end
 
-    # Configuração do PNPM Path
     if not string match -q -- $PNPM_HOME $PATH
         set -gx PATH "$PNPM_HOME" $PATH
     end
