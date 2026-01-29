@@ -1,0 +1,70 @@
+return {
+    {
+        "folke/tokyonight.nvim",
+        lazy = false,
+        priority = 1000,
+        opts = {
+            style = "storm",
+            terminal_colors = true,
+            dim_inactive = true,
+            transparent = false,
+
+            styles = {
+                comments = { italic = true },
+                keywords = { italic = true },
+                sidebars = "dark",
+                floats = "dark",
+            },
+
+            sidebars = { "qf", "help", "terminal", "packer" },
+            lualine_bold = false,
+            cache = true,
+
+            -- 🔴 FORCE PURE BLACK PALETTE
+            on_colors = function(colors)
+                colors.bg = "#000000"
+                colors.bg_dark = "#000000"
+                colors.bg_float = "#000000"
+                colors.bg_sidebar = "#000000"
+                colors.bg_statusline = "#000000"
+            end,
+
+            -- 🔴 FORCE PURE BLACK HIGHLIGHTS (INCLUDING NEO-TREE)
+            on_highlights = function(hl, c)
+                -- Core editor
+                hl.Normal = { bg = "#000000" }
+                hl.NormalNC = { bg = "#000000" }
+                hl.SignColumn = { bg = "#000000" }
+                hl.FoldColumn = { bg = "#000000" }
+                hl.LineNr = { bg = "#000000" }
+                hl.CursorLineNr = { bg = "#000000" }
+                hl.EndOfBuffer = { bg = "#000000" }
+
+                -- Floating windows
+                hl.NormalFloat = { bg = "#000000" }
+                hl.FloatBorder = { bg = "#000000", fg = "#000000" }
+
+                -- Statusline
+                hl.StatusLine = { bg = "#000000" }
+                hl.StatusLineNC = { bg = "#000000" }
+
+                -- 🔴 NEO-TREE (SPACE + E)
+                hl.NeoTreeNormal = { bg = "#000000" }
+                hl.NeoTreeNormalNC = { bg = "#000000" }
+                hl.NeoTreeEndOfBuffer = { bg = "#000000" }
+                hl.NeoTreeWinSeparator = { fg = "#000000", bg = "#000000" }
+
+                hl.NeoTreeFloatNormal = { bg = "#000000" }
+                hl.NeoTreeFloatBorder = { bg = "#000000", fg = "#000000" }
+            end,
+        },
+    },
+
+    -- LazyVim: apply the theme
+    {
+        "LazyVim/LazyVim",
+        opts = {
+            colorscheme = "tokyonight-storm",
+        },
+    },
+}

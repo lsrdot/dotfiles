@@ -3,18 +3,26 @@
 add_newline = true
 
 
-[character] # The name of the module we are configuring is 'character'
+
+
+
+
+
+
+
+# OLD CONFIG
+#[character] 
 #success_symbol = '[ _ ](bold #73C2FF)' #   /  / _ / '➜'
 #error_symbol = "[   ](bold #f81a1a)"    #  /  /  
-success_symbol = '[ _ ](bold green)'
-error_symbol = "[   ](bold red)"     #  /  /  
+#success_symbol = '[ _ ](bold green)'
+#error_symbol = "[   ](bold red)"     #  /  /  
 
 
-[package]
-disabled = false
-style = "bold #FFFFFF"
+#[package]
+#disabled = false
+#style = "bold #FFFFFF"
 
-[directory]
-home_symbol = "~"
-disabled = false
+#[directory]
+#home_symbol = "~"
+#disabled = false
 

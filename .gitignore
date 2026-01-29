@@ -2,6 +2,12 @@
 
 !.gitignore
 
+!ghostty/
+!ghostty/**
+
+!nvim/
+!nvim/**
+
 !albert/
 !albert/**
 

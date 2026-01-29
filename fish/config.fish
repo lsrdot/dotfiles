@@ -25,7 +25,6 @@ if status --is-interactive
         end
     end
 
-    #set -gx LS_COLORS "rs=0:di=1;38;2;51;255;102:fi=0;38;2;46;230;92:ln=38;2;51;255;102:ex=1;38;2;51;255;102:pi=38;2;51;255;102:so=38;2;51;255;102:bd=38;2;51;255;102:cd=38;2;51;255;102:mi=38;2;51;255;102"
     set -e LS_COLORS
     set -Ue LS_COLORS
 
