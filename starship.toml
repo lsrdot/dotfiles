@@ -2,27 +2,17 @@
 
 add_newline = true
 
-
-
-
-
-
-
-
-
-# OLD CONFIG
-#[character] 
-#success_symbol = '[ _ ](bold #73C2FF)' #   /  / _ / '➜'
-#error_symbol = "[   ](bold #f81a1a)"    #  /  /  
+[character]
+success_symbol = '[~~>](bold #7dcfff)'                               #   /  / _ / '➜'
+error_symbol = "[x](bold #e0af68)[x](bold #ff9e64)[x](bold #f7768e)" #  /  /  
 #success_symbol = '[ _ ](bold green)'
 #error_symbol = "[   ](bold red)"     #  /  /  
 
 
-#[package]
-#disabled = false
-#style = "bold #FFFFFF"
+[package]
+disabled = false
+style = "bold #FFFFFF"
 
-#[directory]
-#home_symbol = "~"
-#disabled = false
-
+[directory]
+home_symbol = "~"
+disabled = false

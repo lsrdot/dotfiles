@@ -1,7 +1,6 @@
-
 // source: https://gist.github.com/qwerasd205/c3da6c610c8ffe17d6d2d3cc7068f17f
 // credits: https://github.com/qwerasd205
-
+// Golden spiral samples, [x, y, weight] weight is inverse of distance.
 const vec3[24] samples = {
   vec3(0.1693761725038636, 0.9855514761735895, 1),
   vec3(-1.333070830962943, 0.4721463328627773, 0.7071067811865475),
@@ -27,7 +26,7 @@ const vec3[24] samples = {
   vec3(3.8639122286635708, -2.6589814382925123, 0.21320071635561041),
   vec3(3.3486228404946234, 3.4331800232609, 0.20851441405707477),
   vec3(-2.8769733643574344, 3.9652268864187157, 0.20412414523193154)
-};
+  };
 
 float lum(vec4 c) {
   return 0.299 * c.r + 0.587 * c.g + 0.114 * c.b;
@@ -38,30 +37,18 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
 
   vec4 color = texture(iChannel0, uv);
 
-  // Slightly wider vertical glow for neon-tube feel
-  vec2 step = vec2(0.32, 0.40) / iResolution.xy;
+  // controll how much smear the bloom will generate
+  vec2 step = vec2(0.3132) / iResolution.xy;
 
   for (int i = 0; i < 24; i++) {
     vec3 s = samples[i];
     vec4 c = texture(iChannel0, uv + s.xy * step);
-
     float l = lum(c);
-
-    // saturation factor (favors neon colors over white)
-
-    if (l > 0.12) {
-      float sat = max(
-        max(c.r, max(c.g, c.b)) - min(c.r, min(c.g, c.b)),
-        0.25   // floor so white text still gets a soft halo
-      );
-
-      float glow = pow(l, 1.3);
-
-      color += glow * s.z * c * sat * 0.11;
+    if (l > 0.15) {
+      // controll the brightness
+      color += l * s.z * c * 0.08823;
     }
   }
 
-  // Soft clamp to avoid blown-out whites
-  fragColor.rgb = min(color.rgb, vec3(1.2));
-  fragColor.a = color.a;
+  fragColor = color;
 }

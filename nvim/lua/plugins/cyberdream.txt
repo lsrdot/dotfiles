@@ -1,0 +1,148 @@
+return {
+    {
+        "scottmckendry/cyberdream.nvim",
+        lazy = false,
+        priority = 1000,
+        opts = {
+            ------------------------------------------------------------------
+            -- Variant
+            ------------------------------------------------------------------
+            -- "default" = dark variant
+            -- "light"   = light variant
+            -- "auto"    = follows vim.o.background
+            variant = "default",
+
+            ------------------------------------------------------------------
+            -- Transparency
+            ------------------------------------------------------------------
+            -- Enables transparent background everywhere the theme supports it
+            transparent = true,
+
+            ------------------------------------------------------------------
+            -- Color saturation
+            ------------------------------------------------------------------
+            -- 1   = full color (default)
+            -- 0.5 = more muted
+            -- 0   = fully greyscale
+            saturation = 1,
+
+            ------------------------------------------------------------------
+            -- Font styles
+            ------------------------------------------------------------------
+            -- Italicize comments
+            italic_comments = true,
+
+            ------------------------------------------------------------------
+            -- UI cleanliness
+            ------------------------------------------------------------------
+            -- Replaces fillchars (like ~, │) with spaces for a super clean look
+            hide_fillchars = true,
+
+            ------------------------------------------------------------------
+            -- Pickers UI
+            ------------------------------------------------------------------
+            -- Removes borders from Telescope, Snacks Picker, Fzf-Lua, etc.
+            borderless_pickers = false,
+
+            ------------------------------------------------------------------
+            -- Terminal integration
+            ------------------------------------------------------------------
+            -- Apply Cyberdream colors to :terminal buffers
+            terminal_colors = true,
+
+            ------------------------------------------------------------------
+            -- Performance
+            ------------------------------------------------------------------
+            -- Cache highlights for faster startup
+            -- Use :CyberdreamBuildCache to generate cache
+            -- Use :CyberdreamClearCache to reset
+            cache = false,
+
+            ------------------------------------------------------------------
+            -- Highlight overrides (manual)
+            ------------------------------------------------------------------
+            -- Use this if you want to tweak specific highlight groups directly
+            -- This does NOT override the entire palette
+            highlights = {
+                -- Example:
+                -- Comment = { fg = "#696969", bg = "NONE", italic = true },
+                --
+                -- Tip:
+                -- Run :hi or :h highlight-groups to explore available groups
+            },
+
+            ------------------------------------------------------------------
+            -- Highlight overrides (palette-based)
+            ------------------------------------------------------------------
+            -- This function OVERRIDES the `highlights` table above
+            -- Use Cyberdream's internal color palette
+            overrides = function(colors)
+                return {
+                    -- Example overrides:
+                    -- Comment = { fg = colors.green, italic = true },
+                    -- ["@property"] = { fg = colors.magenta, bold = true },
+                }
+            end,
+
+            ------------------------------------------------------------------
+            -- Color overrides
+            ------------------------------------------------------------------
+            -- Override palette colors globally or per-variant
+            colors = {
+                -- Applies to both light & dark variants
+                bg = "#000000",
+                green = "#00ff00",
+
+                -- Dark variant only overrides
+                dark = {
+                    fg = "#eeeeee",
+                    magenta = "#ff00ff",
+                },
+
+                -- Light variant only overrides
+                light = {
+                    red = "#ff5c57",
+                    cyan = "#5ef1ff",
+                },
+            },
+
+            ------------------------------------------------------------------
+            -- Extensions / Plugin integrations
+            ------------------------------------------------------------------
+            -- Toggle highlight support for supported plugins
+            extensions = {
+                telescope = true,
+                notify = true,
+                mini = true,
+                -- cmp = true,
+                -- gitsigns = true,
+                -- treesitter = true,
+                -- lsp = true,
+                -- snacks = true,
+            },
+
+            ------------------------------------------------------------------
+            -- Alternative extension config (all-or-nothing style)
+            ------------------------------------------------------------------
+            -- Uncomment to manage extensions more aggressively
+            -- extensions = {
+            --     default = false, -- Disable all extensions by default
+            --     base = true,     -- Core highlight groups (recommended)
+            --
+            --     telescope = true,
+            --     cmp = true,
+            --     gitsigns = true,
+            -- },
+        },
+    },
+
+    --------------------------------------------------------------------------
+    -- Tell LazyVim (or Neovim) to actually use Cyberdream
+    --------------------------------------------------------------------------
+    {
+        "LazyVim/LazyVim",
+        opts = {
+            colorscheme = "cyberdream",
+        },
+    },
+}

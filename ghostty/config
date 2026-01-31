@@ -58,26 +58,22 @@ font-feature = ""
 # font
 # try: Monaspace, Iosevka
 
+
+#theme
+theme = tokyodark
+
+
 # --- FONT ---
 font-family = "Monaspace Krypton NF"
-font-size = 10.0
-
-# spacing: Krypton is "Mechanical", it needs breathing room
-#adjust-cell-height = 20%
-
-# --- WEIGHTS ---
-# Using the exact family names from your list for stability
+font-size = 9.0
 font-variation = "wght=600"
 font-variation-bold = "wght=900"
 font-variation-italic = "wght=600"
 font-variation-bold-italic = "wght=900"
 font-synthetic-style = false
-
-# --- LIGATURES ---
-# Combine into one comma-separated string to ensure they all load together
 font-feature = "calt,liga,ss01,ss02,ss03,ss04,ss05,ss06,ss07,ss08,ss09,ss10,cv01=2"
-
 font-synthetic-style = false
+
 
 # cursor
 cursor-style = block
@@ -91,7 +87,6 @@ bell-features = attention,no-audio
 # shaders
 custom-shader = shaders/bloom025.glsl
 custom-shader = shaders/cursor_smear.glsl
-#custom-shader = shaders/tft.glsl
 custom-shader = shaders/in-game-crt.glsl
 custom-shader = shaders/in-game-crt-cursor.glsl
 custom-shader-animation = always
