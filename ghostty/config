@@ -60,12 +60,14 @@ font-feature = ""
 
 
 #theme
-theme = tokyodark
+#theme = dotmonokai
+theme = c64
 
 
 # --- FONT ---
-font-family = "Monaspace Krypton NF"
-font-size = 9.0
+font-family = "Monaspace Neon NF"
+#font-family = "C64 Pro Mono"
+font-size = 8.0
 font-variation = "wght=600"
 font-variation-bold = "wght=900"
 font-variation-italic = "wght=600"
@@ -85,9 +87,11 @@ bell-features = attention,no-audio
 
 
 # shaders
-custom-shader = shaders/bloom025.glsl
+#custom-shader = shaders/bloom025.glsl
 custom-shader = shaders/cursor_smear.glsl
-custom-shader = shaders/in-game-crt.glsl
+#custom-shader = shaders/in-game-crt.glsl
+custom-shader = shaders/in-game-crt-bk.glsl
 custom-shader = shaders/in-game-crt-cursor.glsl
+
 custom-shader-animation = always
 

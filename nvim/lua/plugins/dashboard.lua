@@ -1,24 +1,16 @@
-vim.api.nvim_create_autocmd("ColorScheme", {
-    callback = function()
-        vim.api.nvim_set_hl(0, "SnacksDashboardHeader", {
-            fg = "#FF9D64",
-        })
-    end,
-})
-
 return {
     {
         "folke/snacks.nvim",
         opts = {
             dashboard = {
-                header_hl = "SnacksDashboardHeader",
-                preset = {
-                    pick = function(cmd, opts)
-                        return LazyVim.pick(cmd, opts)()
-                    end,
+                enabled = true,
 
+                -- Highlight group used by the header
+                header_hl = "SnacksDashboardHeader",
+
+                preset = {
                     header = [[
-                                                                       
+                                                                        
                                                                      
        ████ ██████           █████      ██                     
       ███████████             █████                             
@@ -27,9 +19,8 @@ return {
     █████████ ██████████ █████████ █████ █████ ████ █████   
   ███████████ ███    ███ █████████ █████ █████ ████ █████  
  ██████  █████████████████████ ████ █████ █████ ████ ██████ 
-                                                                       
+                                                                        
 ]],
-
           -- stylua: ignore
           keys = {
             { icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
@@ -45,5 +36,35 @@ return {
                 },
             },
         },
+
+        config = function(_, opts)
+            require("snacks").setup(opts)
+
+            vim.api.nvim_create_autocmd("User", {
+                pattern = "VeryLazy",
+                callback = function()
+                    -- break theme link
+                    vim.api.nvim_set_hl(0, "SnacksDashboardHeader", {})
+
+                    -- force your color
+                    vim.api.nvim_set_hl(0, "SnacksDashboardHeader", {
+                        fg = "#ffffff", -- change this freely
+                    })
+
+                    local fg = "#ffffff" -- SAME color as header
+
+                    -- header
+                    vim.api.nvim_set_hl(0, "SnacksDashboardHeader", { fg = fg })
+
+                    -- keys section (THIS is what you want)
+                    vim.api.nvim_set_hl(0, "SnacksDashboardKey", { fg = fg, bold = true })
+                    vim.api.nvim_set_hl(0, "SnacksDashboardDesc", { fg = fg })
+                    vim.api.nvim_set_hl(0, "SnacksDashboardIcon", { fg = fg })
+
+                    -- optional but keeps everything consistent
+                    vim.api.nvim_set_hl(0, "SnacksDashboardSpecial", { fg = fg })
+                end,
+            })
+        end,
     },
 }
