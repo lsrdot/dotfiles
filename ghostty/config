@@ -59,9 +59,9 @@ font-feature = ""
 # try: Monaspace, Iosevka
 
 
-#theme
+theme = tokyodark
 #theme = dotmonokai
-theme = c64
+
 
 
 # --- FONT ---
@@ -83,7 +83,8 @@ cursor-style-blink = true
 shell-integration-features = no-cursor
 
 # bells
-bell-features = attention,no-audio
+#bell-features = attention,no-audio
+bell-features = system
 
 
 # shaders

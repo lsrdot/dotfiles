@@ -1,18 +1,88 @@
 "$schema" = 'https://starship.rs/config-schema.json'
-
 add_newline = true
 
-[character]
-success_symbol = '[OK>](bold #58d1eb)' #   /  / ](bold #7dcfff)' #   /  / ](bold #7dcfff)' #   /  / ](bold #7dcfff)' #   /  / _ / '➜'
-error_symbol = "[ERR>](bold #f4005f)"  #  /  /  
-#success_symbol = '[ _ ](bold green)'
-#error_symbol = "[   ](bold red)"     #  /  /  
-
-
-[package]
-disabled = false
-style = "bold #FFFFFF"
+# The top line now wraps everything in a white pill
+format = """
+[╭─](bold #ee6d85)[](#ee6d85)$directory$git_branch$git_status$package$time[](#ee6d85)
+[╰─](bold #ee6d85)$character"""
 
 [directory]
-home_symbol = "~"
+home_symbol = "HOME "
+style = "bg:#ee6d85 fg:#11121D bold" # Black text on White pill
+format = "[$path]($style)"
 disabled = false
+
+[git_branch]
+symbol = " "
+style = "bg:#ee6d85 fg:#11121D bold"
+format = "[ on $symbol$branch]($style)"
+
+[git_status]
+style = "bg:#ee6d85 fg:#11121D bold"
+format = '([ \($all_status$ahead_behind\)]($style))'
+
+[package]
+disabled = true
+style = "bg:#ee6d85 fg:#11121D bold"
+format = "[ 󰏗 $symbol$version]($style)"
+
+[time]
+disabled = false
+time_format = "%T"
+style = "bg:#ee6d85 fg:#11121D bold"
+format = '[( $time)]($style)'
+
+[character]
+success_symbol = "[>>](bold #ee6d85)"
+error_symbol = "[ ](bold #F6F6EF)"
+
+
+# "$schema" = 'https://starship.rs/config-schema.json'
+# add_newline = true
+#
+# # Formato customizado sem o $all
+# format = """
+# [╭──](bold #ffffff)$directory$git_branch$git_status$package $time
+# [╰──](bold #ffffff)$character"""
+#
+# [character]
+# #success_symbol = "[](bold #ffffff)"
+# success_symbol = "[>>](bold #ffffff)"
+# error_symbol = "[xXx](bold red)"
+#
+# [package]
+# disabled = false
+# style = "bold #f6f6ef"
+#
+# [git_branch]
+# format = "[on ](bold #f6f6ef)[$symbol$branch]($style)"
+# symbol = " "
+# style = "bold #f6f6ef"
+#
+# [git_status]
+# style = "bold #f6f6ef"
+# format = ' ([\($all_status$ahead_behind\)]($style))'
+#
+# [directory]
+# home_symbol = "HOME"
+# style = "bold #ffffff"
+# disabled = false
+#
+# [time]
+# disabled = false
+# time_format = "%T" 
+# format = '[\[$time\]]($style)'
+# style = "bold #ffffff"
+
+# [time]
+# disabled = false
+# time_format = "%T" # HH:MM:SS
+# #format = "[[ $time ](bold #ffffff)]($style)"
+
+#error_symbol = "[](bold red)"
+
+# success_symbol = "[\\$](bold #ffffff)"
+# error_symbol = "[?](bold #ffffff)"     #  /  /  
+
+# success_symbol = "[READY.](bold #FFFFFF)\n"                       #   /  / ](bold #7dcfff)' #   /  / ](bold #7dcfff)' #   /  / ](bold #7dcfff)' #   /  / _ / '➜'
+# error_symbol = "[?ERROR](bold #f4005f)\n[READY.](bold #FFFFFF)\n"

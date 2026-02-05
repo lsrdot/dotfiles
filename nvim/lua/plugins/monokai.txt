@@ -1,0 +1,122 @@
+-- Monokai NighTasty — FULL LazyVim-ready config
+-- Every available option is listed.
+-- Defaults are preserved.
+-- You can safely tweak any value here.
+-- IMPORTANT: options MUST be set before loading the colorscheme.
+
+return {
+  {
+    "polirritmico/monokai-nightasty.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      -- =========================================================
+      -- GLOBAL BACKGROUND STYLE
+      -- =========================================================
+      -- Controls whether the theme uses dark or light palette
+      -- Valid values: "dark" | "light"
+      vim.opt.background = "dark" -- default
+
+      require("monokai-nightasty").setup({
+        -- =========================================================
+        -- BACKGROUND OPTIONS
+        -- =========================================================
+        -- Background for dark style
+        -- Valid values:
+        --   "default"     -> theme-defined background
+        --   "dark"        -> darker variant
+        --   "transparent"-> no background
+        --   "#RRGGBB"     -> custom hex color
+        dark_style_background = "transparent",
+
+        -- Background for light style
+        light_style_background = "transparent",
+
+        -- =========================================================
+        -- HIGHLIGHT STYLES
+        -- =========================================================
+        hl_styles = {
+          -- Syntax styles (see :h nvim_set_hl)
+          comments = { italic = true }, -- comments styling
+          keywords = { italic = false }, -- keywords styling
+          functions = {}, -- functions styling
+          variables = {}, -- variables styling
+
+          -- Background styles for UI elements
+          -- Valid values: "default" | "dark" | "transparent"
+          floats = "transparent", -- floating windows (LSP, etc)
+          sidebars = "transparent", -- side panels (Neo-tree, etc)
+        },
+
+        -- =========================================================
+        -- UI / UX OPTIONS
+        -- =========================================================
+        color_headers = true, -- colored markdown headers (h1, h2, ...)
+        dim_inactive = false, -- dim inactive windows
+
+        -- Lualine integration
+        lualine_bold = true, -- bold section headers
+        lualine_style = "dark", -- "default" | "dark" | "light"
+
+        -- Markdown / Treesitter
+        markdown_header_marks = true, -- highlight the '#' characters in markdown
+
+        -- =========================================================
+        -- TERMINAL COLORS
+        -- =========================================================
+        -- true  -> apply terminal colors automatically
+        -- false -> disable terminal colors
+        -- table -> override specific terminal_color_x
+        -- function(colors) -> dynamic override
+        terminal_colors = true,
+
+        -- =========================================================
+        -- COLOR OVERRIDES (PALETTE LEVEL)
+        -- =========================================================
+        -- Called BEFORE highlights are generated
+        -- Use this to change base colors
+        -- Example:
+        -- colors.green = "#00ff00"
+        on_colors = function(colors)
+          -- colors.charcoal_medium = "#455455"
+        end,
+
+        -- =========================================================
+        -- HIGHLIGHT OVERRIDES (GROUP LEVEL)
+        -- =========================================================
+        -- Called AFTER highlights are generated
+        -- Use :Inspect to find highlight group names
+        on_highlights = function(hl, c)
+          -- Example overrides:
+          -- hl.Normal = { bg = c.bg }
+          -- hl.LineNr = { fg = c.grey }
+          -- hl.Folded = { fg = c.orange, bg = c.bg_float, italic = false }
+        end,
+
+        -- =========================================================
+        -- PERFORMANCE
+        -- =========================================================
+        cache = true, -- cache highlights for faster startup
+
+        -- =========================================================
+        -- PLUGIN INTEGRATION
+        -- =========================================================
+        auto_enable_plugins = true, -- auto-detect lazy.nvim plugins
+
+        -- Manually enable/disable plugin highlights
+        -- Use repo name as key (see plugin docs for supported list)
+        plugins = {
+          -- all = true, -- enable all plugin highlights
+          -- ["telescope.nvim"] = true,
+          -- ["nvim-cmp"] = true,
+          -- ["gitsigns.nvim"] = true,
+        },
+      })
+
+      -- =========================================================
+      -- LOAD THE COLORSCHEME
+      -- =========================================================
+      require("monokai-nightasty").load()
+    end,
+  },
+}
