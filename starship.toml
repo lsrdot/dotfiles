@@ -3,42 +3,50 @@ add_newline = true
 
 # The top line now wraps everything in a white pill
 format = """
-[╭─](bold #ee6d85)[](#ee6d85)$directory$git_branch$git_status$package$time[](#ee6d85)
+[╭─](bold #ee6d85)[](#ee6d85)$directory$git_branch$git_status$package$time[](#ee6d85)
 [╰─](bold #ee6d85)$character"""
 
 [directory]
-home_symbol = "HOME "
-style = "bg:#ee6d85 fg:#11121D bold" # Black text on White pill
+home_symbol = " "
+style = "bg:#11121d fg:#ee6d85 bold" # Black text on White pill
 format = "[$path]($style)"
 disabled = false
 
 [git_branch]
 symbol = " "
-style = "bg:#ee6d85 fg:#11121D bold"
+style = "bg:#11121d fg:#ee6d85 bold"
 format = "[ on $symbol$branch]($style)"
 
 [git_status]
-style = "bg:#ee6d85 fg:#11121D bold"
-format = '([ \($all_status$ahead_behind\)]($style))'
+style = "bg:#11121d fg:#ee6d85 bold"
+format = '([$all_status$ahead_behind]($style))'
+
 
 [package]
 disabled = true
-style = "bg:#ee6d85 fg:#11121D bold"
+style = "bg:#11121d fg:#ee6d85 bold"
 format = "[ 󰏗 $symbol$version]($style)"
 
 [time]
 disabled = false
-time_format = "%T"
-style = "bg:#ee6d85 fg:#11121D bold"
+time_format = "@%T"
+style = "bg:#11121d fg:#ee6d85 bold"
 format = '[( $time)]($style)'
 
 [character]
-success_symbol = "[>>](bold #ee6d85)"
-error_symbol = "[ ](bold #F6F6EF)"
+success_symbol = "[0x00─󰄾](bold #ee6d85)"
+error_symbol = "[────](bold #ee6d85)[ ](bold #F6F6EF)"
 
 
 # "$schema" = 'https://starship.rs/config-schema.json'
-# add_newline = true
+# add_newline = true    
+#
+#
+# format = """
+# [╭─](bold #ee6d85)[](#ee6d85)$directory$git_branch$git_status$package$time[](#ee6d85)
+# [╰─](bold #ee6d85)$character"""
+#
+#
 #
 # # Formato customizado sem o $all
 # format = """

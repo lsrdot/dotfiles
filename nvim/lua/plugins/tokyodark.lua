@@ -25,7 +25,7 @@ return {
       --
       -- Cyberpunk / terminal-friendly sweet spot: 0.95–1.00
       --
-      gamma = 0.95,
+      gamma = 1.0,
 
       ------------------------------------------------------------------
       -- Font styles
