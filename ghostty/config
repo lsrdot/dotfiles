@@ -84,6 +84,7 @@ shell-integration-features = no-cursor
 
 scrollbar = never
 
+
 # bells
 #bell-features = attention,no-audio
 bell-features = system
@@ -97,4 +98,5 @@ custom-shader = shaders/in-game-crt-bk.glsl
 custom-shader = shaders/in-game-crt-cursor.glsl
 
 custom-shader-animation = always
+
 
