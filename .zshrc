@@ -54,10 +54,10 @@ ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(expand-or-complete)
 typeset -gA ZSH_HIGHLIGHT_STYLES
 unset LS_COLORS
 export LS_COLORS="di=1;38;5;15:ln=36:ex=32:fi=0:pi=33:so=35:bd=34;46:cd=34;43"
-ZSH_HIGHLIGHT_STYLES[command]='bold,fg=#95c561'
-ZSH_HIGHLIGHT_STYLES[alias]='bold,fg=#95c561'
-ZSH_HIGHLIGHT_STYLES[builtin]='bold,fg=#95c561'
-ZSH_HIGHLIGHT_STYLES[function]='bold,fg=#95c561'
+ZSH_HIGHLIGHT_STYLES[command]='bold,fg=#9EEF00'
+ZSH_HIGHLIGHT_STYLES[alias]='bold,fg=#9EEF00'
+ZSH_HIGHLIGHT_STYLES[builtin]='bold,fg=#9EEF00'
+ZSH_HIGHLIGHT_STYLES[function]='bold,fg=#9EEF00'
 # color completion
 ZSH_HIGHLIGHT_STYLES[default]='fg=#ff9e64'
 ZSH_HIGHLIGHT_STYLES[arg0]='fg=#ff9e64'
@@ -80,7 +80,7 @@ function _run_precmd_hooks() {
     
     # Error bell (red flash)
     if [[ $last_status -ne 0 && $HISTCMD -ne $LAST_HIST_ID ]]; then
-        printf "\e]11;#f7768e\a"
+        printf "\e]11;#ff4040\a"
         (sleep 0.05)
         printf "\e]11;#11121d\a"
     fi
@@ -109,6 +109,7 @@ alias fake="genact"
 alias cwifi="nmtui-connect"
 alias stonks="tickrs -p -s NVDA,AAPL,MSFT,AMZN,GOOGL,GOOG,META,AVGO,TSLA,ASML,MU,COST,AMD,PLTR,NFLX,CSCO,LRCX,AZN,AMAT,INTC,KLAC,LIN,TMUS,PEP,TXN,APP,SHOP,AMGN,ISRG,GILD,BKNG,QCOM,ADI,PDD,HON,INTU,PANW,VRTX,ADBE,ARM,MELI,CRWD,SBUX,CMCSA,CEG,ADP,SNPS,DASH,MAR,ORLY,CDNS,ABNB,REGN,MNST,CTAS,MDLZ,CSX,WBD,MRVL,PCAR,AEP,ROST,FTNT,NXPI,BKR,IDXX,ADSK,EA,TRI,CPRT,KDP,CTSH,XEL,KHC,DXCM,GEHC,TEAM,BIIB,WDC,ANSS,MCHP,FAST,MSTR,VRSK,ROP,EBAY,EXC,LULU,ODFL,PAYX,ROKU,TTWO,WDAY,ZS,MDB,OKTA,DDOG,TSM,STNE,NU"
 alias cstonks="tickrs -p -s BTC-USD,ETH-USD,USDT-USD,BNB-USD,XRP-USD,SOL-USD,USDC-USD,STETH-USD,TRX-USD,DOGE-USD,ADA-USD,WSTETH-USD,BCH-USD,WBTC-USD,WBETH-USD,WEETH-USD,USDS-USD,BSC-USD,XMR-USD,LINK-USD,LEO-USD,HYPE-USD,CBBTC-USD,WETH-USD,XLM-USD,USDE-USD,ZEC-USD,SUI-USD,LTC-USD,AVAX-USD"
+alias r="run"
 
 # ---------------------------------------------------------
 # KEYBINDINGS
