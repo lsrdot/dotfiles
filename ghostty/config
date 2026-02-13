@@ -59,21 +59,30 @@ font-feature = ""
 # try: Monaspace, Iosevka
 
 
-theme = tokyodark
+theme = ghdark
 
 
 
 # --- FONT ---
-font-family = "Monaspace Neon NF"
-#font-family = "C64 Pro Mono"
+# font-family = "Monaspace Neon NF"
+# font-size = 9.0
+# font-variation = "wght=600"
+# font-variation-bold = "wght=900"
+# font-variation-italic = "wght=600"
+# font-variation-bold-italic = "wght=900"
+# font-synthetic-style = false
+# font-feature = "calt,liga,ss01,ss02,ss03,ss04,ss05,ss06,ss07,ss08,ss09,ss10,cv01=2"
+# font-synthetic-style = false
+
+font-family = "Maple Mono NF CN"
 font-size = 9.0
-font-variation = "wght=600"
-font-variation-bold = "wght=900"
-font-variation-italic = "wght=600"
-font-variation-bold-italic = "wght=900"
+font-style = Medium
+font-style-bold = ExtraBold
+font-style-italic = Medium Italic
+font-style-bold-italic = ExtraBold Italic
 font-synthetic-style = false
-font-feature = "calt,liga,ss01,ss02,ss03,ss04,ss05,ss06,ss07,ss08,ss09,ss10,cv01=2"
-font-synthetic-style = false
+font-feature = "calt,liga,ss02,ss05,ss06,ss07,ss08,cv01"
+
 
 # cursor
 cursor-style = block
@@ -93,7 +102,7 @@ bell-features = system
 #custom-shader = shaders/bloom025.glsl
 custom-shader = shaders/cursor_smear.glsl
 #custom-shader = shaders/in-game-crt.glsl
-custom-shader = shaders/in-game-crt-bk.glsl
+#custom-shader = shaders/in-game-crt-bk.glsl
 custom-shader = shaders/in-game-crt-cursor.glsl
 
 custom-shader-animation = always

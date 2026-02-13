@@ -33,14 +33,5 @@ return {
         },
       },
     },
-
-    config = function(_, opts)
-      require("snacks").setup(opts)
-
-      -- THIS IS ALL YOU NEED
-      vim.api.nvim_set_hl(0, "SnacksDashboardHeader", {
-        fg = "#9EEF00", -- change color here
-      })
-    end,
   },
 }

@@ -1,0 +1,11 @@
+return {
+  {
+    "ayu-theme/ayu-vim",
+    priority = 1000, -- make sure it loads before other plugins
+    config = function()
+      vim.opt.termguicolors = true
+      vim.g.ayucolor = "dark" -- "light", "mirage", or "dark"
+      vim.cmd.colorscheme("ayu")
+    end,
+  },
+}

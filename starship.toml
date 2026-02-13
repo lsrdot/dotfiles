@@ -1,97 +1,25 @@
-"$schema" = 'https://starship.rs/config-schema.json'
+format = """
+$username $directory $git_branch
+$character"""
+
 add_newline = true
 
-# The top line now wraps everything in a white pill
-format = """
-[╭─](bold #9EEF00)[](#9EEF00)$directory$git_branch$git_status$package$time[](#9EEF00)
-[╰──](bold #9EEF00)$character"""
+[username]
+show_always = true
+style_user = "italic fg:#ffab72"
+format = "[$user]($style)"
 
 [directory]
-home_symbol = ""
-style = "bg:#11121d fg:#9EEF00 bold" # Black text on White pill
-format = "[$path]($style)"
-disabled = false
+style = "fg:#84e79c"
+format = "in [$path]($style)"
+truncation_length = 3
+truncation_symbol = ""
 
 [git_branch]
-symbol = " "
-style = "bg:#11121d fg:#9EEF00 bold"
-format = "[ on $symbol$branch]($style)"
-
-[git_status]
-style = "bg:#11121d fg:#9EEF00 bold"
-format = '([$all_status$ahead_behind]($style))'
-
-
-[package]
-disabled = true
-style = "bg:#11121d fg:#ee6d85 bold"
-format = "[ 󰏗 $symbol$version]($style)"
-
-[time]
-disabled = false
-time_format = "@%T"
-style = "bg:#11121d fg:#9EEF00 bold"
-format = '[( $time)]($style)'
+symbol = " " 
+style = "fg:#78b6ff"
+format = "on [$symbol$branch]($style) "
 
 [character]
-success_symbol = "[──0x00─󰄾](bold #9EEF00)"
-error_symbol   = "[](bold #F6F6EF)[─0x01─](bold #ff4040)[󰄾](bold #ff4040)"
-#error_symbol = "[────](bold #ee6d85)[ ](bold #F6F6EF)"
-
-
-# "$schema" = 'https://starship.rs/config-schema.json'
-# add_newline = true    
-#
-#
-# format = """
-# [╭─](bold #ee6d85)[](#ee6d85)$directory$git_branch$git_status$package$time[](#ee6d85)
-# [╰─](bold #ee6d85)$character"""
-#
-#
-#
-# # Formato customizado sem o $all
-# format = """
-# [╭──](bold #ffffff)$directory$git_branch$git_status$package $time
-# [╰──](bold #ffffff)$character"""
-#
-# [character]
-# #success_symbol = "[](bold #ffffff)"
-# success_symbol = "[>>](bold #ffffff)"
-# error_symbol = "[xXx](bold red)"
-#
-# [package]
-# disabled = false
-# style = "bold #f6f6ef"
-#
-# [git_branch]
-# format = "[on ](bold #f6f6ef)[$symbol$branch]($style)"
-# symbol = " "
-# style = "bold #f6f6ef"
-#
-# [git_status]
-# style = "bold #f6f6ef"
-# format = ' ([\($all_status$ahead_behind\)]($style))'
-#
-# [directory]
-# home_symbol = "HOME"
-# style = "bold #ffffff"
-# disabled = false
-#
-# [time]
-# disabled = false
-# time_format = "%T" 
-# format = '[\[$time\]]($style)'
-# style = "bold #ffffff"
-
-# [time]
-# disabled = false
-# time_format = "%T" # HH:MM:SS
-# #format = "[[ $time ](bold #ffffff)]($style)"
-
-#error_symbol = "[](bold red)"
-
-# success_symbol = "[\\$](bold #ffffff)"
-# error_symbol = "[?](bold #ffffff)"     #  /  /  
-
-# success_symbol = "[READY.](bold #FFFFFF)\n"                       #   /  / ](bold #7dcfff)' #   /  / ](bold #7dcfff)' #   /  / ](bold #7dcfff)' #   /  / _ / '➜'
-# error_symbol = "[?ERROR](bold #f4005f)\n[READY.](bold #FFFFFF)\n"
+success_symbol = "[>](bold fg:#f0f6fc)"
+error_symbol = "[x](bold fg:#f85149)"

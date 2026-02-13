@@ -46,7 +46,9 @@
 // How visible the scan line effect is
 // NOTE: Technically these are not scan lines, but rather the lack of them
 // [0, 1]
-#define SCAN_LINES_STRENGTH 0.72
+
+//default 0.72
+#define SCAN_LINES_STRENGTH 0
 // How bright the spaces between the lines are
 // [0, 1]
 #define SCAN_LINES_VARIANCE 0.4

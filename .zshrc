@@ -53,17 +53,20 @@ ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(expand-or-complete)
 # ---------------------------------------------------------
 typeset -gA ZSH_HIGHLIGHT_STYLES
 unset LS_COLORS
-export LS_COLORS="di=1;38;5;15:ln=36:ex=32:fi=0:pi=33:so=35:bd=34;46:cd=34;43"
-ZSH_HIGHLIGHT_STYLES[command]='bold,fg=#9EEF00'
-ZSH_HIGHLIGHT_STYLES[alias]='bold,fg=#9EEF00'
-ZSH_HIGHLIGHT_STYLES[builtin]='bold,fg=#9EEF00'
-ZSH_HIGHLIGHT_STYLES[function]='bold,fg=#9EEF00'
-# color completion
-ZSH_HIGHLIGHT_STYLES[default]='fg=#ff9e64'
-ZSH_HIGHLIGHT_STYLES[arg0]='fg=#ff9e64'
-ZSH_HIGHLIGHT_STYLES[path]='fg=#ff9e64'
-ZSH_HIGHLIGHT_STYLES[path_prefix]='fg=#ff9e64'
-ZSH_HIGHLIGHT_STYLES[string]='fg=#ff9e64'
+export LS_COLORS="di=0;38;2;240;246;252:fi=3;38;2;177;186;196:ln=00;36:ex=00;32:pi=00;33:so=00;35:bd=00;34;46:cd=00;34;43"
+ZSH_HIGHLIGHT_STYLES[command]='fg=#f0f6fc'
+ZSH_HIGHLIGHT_STYLES[alias]='fg=#f0f6fc'
+ZSH_HIGHLIGHT_STYLES[builtin]='fg=#f0f6fc'
+ZSH_HIGHLIGHT_STYLES[function]='fg=#f0f6fc'
+
+ZSH_HIGHLIGHT_STYLES[default]='fg=#ff7b72'
+ZSH_HIGHLIGHT_STYLES[arg0]='fg=#ff7b72'
+ZSH_HIGHLIGHT_STYLES[path]='fg=#ff7b72'
+ZSH_HIGHLIGHT_STYLES[path_prefix]='fg=#ff7b72'
+ZSH_HIGHLIGHT_STYLES[string]='fg=#ff7b72'
+
+ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=#343434'
+
 
 
 # ---------------------------------------------------------
@@ -80,9 +83,9 @@ function _run_precmd_hooks() {
     
     # Error bell (red flash)
     if [[ $last_status -ne 0 && $HISTCMD -ne $LAST_HIST_ID ]]; then
-        printf "\e]11;#ff4040\a"
+        printf "\e]11;#f85149\a"
         (sleep 0.05)
-        printf "\e]11;#11121d\a"
+        printf "\e]11;#1B1B1B\a"
     fi
     LAST_HIST_ID=$HISTCMD
 }
@@ -110,6 +113,7 @@ alias cwifi="nmtui-connect"
 alias stonks="tickrs -p -s NVDA,AAPL,MSFT,AMZN,GOOGL,GOOG,META,AVGO,TSLA,ASML,MU,COST,AMD,PLTR,NFLX,CSCO,LRCX,AZN,AMAT,INTC,KLAC,LIN,TMUS,PEP,TXN,APP,SHOP,AMGN,ISRG,GILD,BKNG,QCOM,ADI,PDD,HON,INTU,PANW,VRTX,ADBE,ARM,MELI,CRWD,SBUX,CMCSA,CEG,ADP,SNPS,DASH,MAR,ORLY,CDNS,ABNB,REGN,MNST,CTAS,MDLZ,CSX,WBD,MRVL,PCAR,AEP,ROST,FTNT,NXPI,BKR,IDXX,ADSK,EA,TRI,CPRT,KDP,CTSH,XEL,KHC,DXCM,GEHC,TEAM,BIIB,WDC,ANSS,MCHP,FAST,MSTR,VRSK,ROP,EBAY,EXC,LULU,ODFL,PAYX,ROKU,TTWO,WDAY,ZS,MDB,OKTA,DDOG,TSM,STNE,NU"
 alias cstonks="tickrs -p -s BTC-USD,ETH-USD,USDT-USD,BNB-USD,XRP-USD,SOL-USD,USDC-USD,STETH-USD,TRX-USD,DOGE-USD,ADA-USD,WSTETH-USD,BCH-USD,WBTC-USD,WBETH-USD,WEETH-USD,USDS-USD,BSC-USD,XMR-USD,LINK-USD,LEO-USD,HYPE-USD,CBBTC-USD,WETH-USD,XLM-USD,USDE-USD,ZEC-USD,SUI-USD,LTC-USD,AVAX-USD"
 alias r="run"
+alias py="python3"
 
 # ---------------------------------------------------------
 # KEYBINDINGS
@@ -144,13 +148,39 @@ printf '\e[1 q'
 # ---------------------------------------------------------
 # FASTFETCH GREETING
 # ---------------------------------------------------------
+# function precmd_first_time {
+#   fastfetch --pipe false | while IFS= read -r line; do
+#     printf '%s\n' "$line"
+#     sleep 0.016
+#   done
+#   precmd_functions=(${precmd_functions#precmd_first_time})
+# }
+# precmd_functions+=(precmd_first_time)
+
 function precmd_first_time {
+  local flag
+
+  if [[ -n "$TMUX" ]]; then
+    # Make a safe filename from $TMUX
+    local safe_tmux=${TMUX//\//_}
+    flag="/tmp/fastfetch_printed_${safe_tmux}"
+
+    if [[ -f "$flag" ]]; then
+      precmd_functions=(${precmd_functions:#precmd_first_time})
+      return
+    fi
+  fi
+
   fastfetch --pipe false | while IFS= read -r line; do
     printf '%s\n' "$line"
     sleep 0.016
   done
-  precmd_functions=(${precmd_functions#precmd_first_time})
+
+  [[ -n "$flag" ]] && touch "$flag"
+
+  precmd_functions=(${precmd_functions:#precmd_first_time})
 }
+
 precmd_functions+=(precmd_first_time)
 
 
@@ -184,26 +214,6 @@ export FZF_DEFAULT_OPTS="
 --color=gutter:#11121d
 --color=scrollbar:#a485dd
 "
-
-# export FZF_DEFAULT_OPTS="
-# --ansi
-# --layout=reverse
-# --info=inline-right
-# --border=none
-# --highlight-line
-# --color=bg:#0c0c0c,fg:#d9d9d9
-# --color=bg+:#1a1a1a,fg+:#f6f6ef
-# --color=hl:#98e024,hl+:#58d1eb
-# --color=prompt:#9d65ff
-# --color=pointer:#f4005f
-# --color=marker:#98e024
-# --color=spinner:#f4005f
-# --color=header:#625e4c
-# --color=info:#e0d561
-# --color=separator:#625e4c
-# --color=gutter:#0c0c0c
-# --color=scrollbar:#9d65ff
-# "
 
 
 # ---------------------------------------------------------
