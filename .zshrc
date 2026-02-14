@@ -43,7 +43,7 @@ fi
 # PLUGINS
 # ---------------------------------------------------------
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=a485dd' # also color completion opt
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#9f97ad'
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(expand-or-complete)
 
@@ -53,20 +53,21 @@ ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(expand-or-complete)
 # ---------------------------------------------------------
 typeset -gA ZSH_HIGHLIGHT_STYLES
 unset LS_COLORS
-export LS_COLORS="di=0;38;2;240;246;252:fi=3;38;2;177;186;196:ln=00;36:ex=00;32:pi=00;33:so=00;35:bd=00;34;46:cd=00;34;43"
+export LS_COLORS="di=0;38;2;240;246;252:fi=3;38;2;211;232;243:ln=00;36:ex=00;32:pi=00;33:so=00;35:bd=00;34;46:cd=00;34;43"
+
 ZSH_HIGHLIGHT_STYLES[command]='fg=#f0f6fc'
 ZSH_HIGHLIGHT_STYLES[alias]='fg=#f0f6fc'
 ZSH_HIGHLIGHT_STYLES[builtin]='fg=#f0f6fc'
 ZSH_HIGHLIGHT_STYLES[function]='fg=#f0f6fc'
 
-ZSH_HIGHLIGHT_STYLES[default]='fg=#ff7b72'
-ZSH_HIGHLIGHT_STYLES[arg0]='fg=#ff7b72'
-ZSH_HIGHLIGHT_STYLES[path]='fg=#ff7b72'
-ZSH_HIGHLIGHT_STYLES[path_prefix]='fg=#ff7b72'
-ZSH_HIGHLIGHT_STYLES[string]='fg=#ff7b72'
 
-ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=#343434'
+ZSH_HIGHLIGHT_STYLES[default]='fg=#ffb3af'
+ZSH_HIGHLIGHT_STYLES[arg0]='fg=#ffb3af'
+ZSH_HIGHLIGHT_STYLES[path]='fg=#ffb3af'
+ZSH_HIGHLIGHT_STYLES[path_prefix]='fg=#ffb3af'
+ZSH_HIGHLIGHT_STYLES[string]='fg=#ffb3af'
 
+ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=#6b737d'
 
 
 # ---------------------------------------------------------
@@ -195,26 +196,26 @@ eval $(thefuck --alias)
 # FZF
 # ---------------------------------------------------------
 source <(fzf --zsh)
+
 export FZF_DEFAULT_OPTS="
 --ansi
 --layout=reverse
 --info=inline-right
 --border=none
 --highlight-line
---color=bg:#11121d,fg:#a0a8cd
---color=bg+:#212234,fg+:#a0a8cd
---color=hl:#ee6d85,hl+:#95c561
---color=prompt:#95c561
---color=pointer:#7199ee
---color=marker:#95c561
---color=spinner:#a485dd
---color=header:#38a89d
---color=info:#d7a65f
---color=separator:#212234
---color=gutter:#11121d
---color=scrollbar:#a485dd
+--color=bg:#1B1B1B,fg:#f2f7ff
+--color=bg+:#3a5f8a,fg+:#ffffff
+--color=hl:#ffb3af,hl+:#dcffe5
+--color=prompt:#dcffe5
+--color=pointer:#d6e9ff
+--color=marker:#dcffe5
+--color=spinner:#eadcff
+--color=header:#c9f4f7
+--color=info:#ffe3cf
+--color=separator:#6b737d
+--color=gutter:#1B1B1B
+--color=scrollbar:#eadcff
 "
-
 
 # ---------------------------------------------------------
 # FZF VI OPENER 

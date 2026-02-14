@@ -1,24 +1,61 @@
 
 palette = 0=#0d1117
-palette = 1=#ff7b72
-palette = 2=#3fb950
-palette = 3=#56d4dd
-palette = 4=#2f81f7
-palette = 5=#a371f7
-palette = 6=#39c5cf
-palette = 7=#b1bac4
 
-palette = 8=#484f58
-palette = 9=#f85149
-palette = 10=#56d364
-palette = 11=#e3b341
-palette = 12=#58a6ff
-palette = 13=#bc8cff
-palette = 14=#56d4dd
-palette = 15=#f0f6fc
+# phosphor red (dim)
+palette = 1=#ffb3af
+
+# phosphor green (dim)
+palette = 2=#dcffe5
+
+# phosphor cyan (brightened)
+palette = 3=#c9f4f7
+
+# phosphor blue (dim)
+palette = 4=#d6e9ff
+
+# phosphor purple (brightened)
+palette = 5=#eadcff
+
+# phosphor cyan variant
+palette = 6=#c9f4f7
+
+# phosphor white (soft)
+palette = 7=#e6edf3
+
+# bright black (phosphor gray)
+palette = 8=#6b737d
+
+# phosphor red (bright)
+palette = 9=#ffb3af
+
+# phosphor green (bright)
+palette = 10=#dcffe5
+
+# phosphor yellow/orange (bright)
+palette = 11=#ffe3cf
+
+# phosphor blue (bright)
+palette = 12=#d6e9ff
+
+# phosphor purple (bright)
+palette = 13=#eadcff
+
+# phosphor cyan (bright)
+palette = 14=#c9f4f7
+
+# full phosphor white
+palette = 15=#ffffff
+
 
 background = #1B1B1B
-foreground = #e6edf3
-cursor-color = #e6edf3
-selection-background = #264f78
+#background = #25282C
+
+# phosphor shifted foreground
+foreground = #f2f7ff
+
+cursor-color = #ffffff
+
+# phosphor selection blue
+selection-background = #3a5f8a
+
 selection-foreground = #ffffff
