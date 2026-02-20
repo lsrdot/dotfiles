@@ -44,7 +44,7 @@ palette = 13=#eadcff
 palette = 14=#c9f4f7
 
 # full phosphor white
-palette = 15=#ffffff
+palette = 15=#e0e3e7
 
 
 background = #1B1B1B
@@ -53,7 +53,7 @@ background = #1B1B1B
 # phosphor shifted foreground
 foreground = #f2f7ff
 
-cursor-color = #ffffff
+cursor-color = #e0e3e7
 
 # phosphor selection blue
 selection-background = #3a5f8a

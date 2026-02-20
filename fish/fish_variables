@@ -18,4 +18,4 @@ SETUVAR fish_cursor_visual:block
 SETUVAR fish_pager_color_completion:normal
 SETUVAR fish_pager_color_description:normal
 SETUVAR fish_pager_color_prefix:normal
-SETUVAR fish_user_paths:/opt/jdk\x2d25\x2e0\x2e1/bin\x1e/home/dot/\x2espicetify\x1e/home/dot/\x2ecargo/bin
+SETUVAR fish_user_paths:/opt/jdk\x2d25\x2e0\x2e1/bin\x1e/home/dot/\x2espicetify\x1e/home/dot/\x2ecargo/bin\x1e/home/smooth/\x2ecargo/bin
