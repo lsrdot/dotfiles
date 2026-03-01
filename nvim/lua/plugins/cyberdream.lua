@@ -11,13 +11,15 @@ return {
 
         transparent = true,
 
-        saturation = 0.65,
+        saturation = 0.55,
 
-        hide_fillchars = false,
+        hide_fillchars = true,
 
         borderless_pickers = false,
 
         terminal_colors = true,
+
+        italic_comments = true,
 
         cache = false,
 
